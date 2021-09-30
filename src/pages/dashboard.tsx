@@ -1,9 +1,11 @@
-import { Flex, SimpleGrid, Box, Text, theme } from "@chakra-ui/react";
+import Head from "next/head";
 import dynamic from "next/dynamic";
+
+import { Flex, SimpleGrid, Box, Text, theme } from "@chakra-ui/react";
+import { ApexOptions } from "apexcharts";
+
 import { Header } from "../components/Header";
 import { Sidebar } from "../components/Sidebar";
-
-import { ApexOptions } from "apexcharts";
 
 const Chart = dynamic(() => import("react-apexcharts"), {
   ssr: false,
@@ -62,6 +64,10 @@ const series = [{ name: "series1", data: [31, 120, 10, 28, 61, 18, 109] }];
 export default function Dashboard() {
   return (
     <Flex direction="column" h="100vh">
+      <Head>
+        <title>Dashboard | DashGo</title>
+      </Head>
+
       <Header />
 
       <Flex w="100%" my="6" maxW={1480} mx="auto" px="6">

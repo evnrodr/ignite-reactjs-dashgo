@@ -1,4 +1,6 @@
+import Head from "next/head";
 import Link from "next/link";
+
 import {
   Box,
   Flex,
@@ -15,7 +17,7 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import { RiAddLine, RiPencilLine } from "react-icons/ri";
+import { RiAddLine } from "react-icons/ri";
 
 import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
@@ -29,6 +31,10 @@ export default function UserList() {
 
   return (
     <Box>
+      <Head>
+        <title>Users | DashGo</title>
+      </Head>
+
       <Header />
 
       <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
